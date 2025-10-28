@@ -1,12 +1,65 @@
 <!doctype html>
 <html lang="bn">
 <head>
-<meta charset="utf-8"/>
-<title>Playoffs Roadmap</title>
-<link rel="stylesheet" href="playoff.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Playoffs Roadmap - Rajnagar Tournament</title>
+  <link rel="stylesheet" href="playoff.css" />
 </head>
 <body>
-<h1>Playoffs Coming Soon</h1>
-<script src="playoff.js"></script>
+  <header class="hero">
+    <h1>Playoffs Roadmap</h1>
+    <p>Qualifier 1 → Final; Eliminator → Qualifier 2 → Final (IPL Format)</p>
+  </header>
+
+  <main class="wrap">
+    <section class="bracket">
+      <div class="column col-left">
+        <div class="match" id="qualifier1">
+          <div class="m-title">Qualifier 1 (Rank 1 vs Rank 2)</div>
+          <button class="teamBtn" data-pos="q1_home" id="q1_home"></button>
+          <button class="teamBtn" data-pos="q1_away" id="q1_away"></button>
+        </div>
+
+        <div class="match" id="eliminator">
+          <div class="m-title">Eliminator (Rank 3 vs Rank 4)</div>
+          <button class="teamBtn" data-pos="el_home" id="el_home"></button>
+          <button class="teamBtn" data-pos="el_away" id="el_away"></button>
+        </div>
+      </div>
+
+      <div class="column col-mid">
+        <div class="match" id="qualifier2">
+          <div class="m-title">Qualifier 2<br><small>(Loser Q1 vs Winner Eliminator)</small></div>
+          <button class="teamBtn" data-pos="q2_home" id="q2_home"></button>
+          <button class="teamBtn" data-pos="q2_away" id="q2_away"></button>
+        </div>
+
+        <div class="match final" id="final">
+          <div class="m-title">Final</div>
+          <button class="teamBtn" data-pos="final_home" id="final_home"></button>
+          <button class="teamBtn" data-pos="final_away" id="final_away"></button>
+        </div>
+      </div>
+
+      <div class="column col-right">
+        <div class="panel info">
+          <h3>Roadmap Explanation</h3>
+          <ol>
+            <li>Qualifier 1: Rank 1 vs Rank 2 → বিজয়ী সরাসরি Final-এ যায়।</li>
+            <li>Eliminator: Rank 3 vs Rank 4 → বিজয়ী Qualifier 2-এ খেলবে।</li>
+            <li>Qualifier 2: Eliminator বিজয়ী vs Q1 হারানো দল → বিজয়ী Final-এ যাবে।</li>
+            <li>Final: Q1 বিজয়ী বনাম Q2 বিজয়ী → Champion।</li>
+          </ol>
+          <p class="note">ম্যাচের ফল দিতে তুমি প্রতিটি ম্যাচে যে দলের জয় সিলেক্ট করবে — রোডম্যাপ অটো আপডেট হবে।</p>
+        </div>
+        <div class="panel actions">
+          <button id="resetBtn" class="actionBtn">Reset</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="playoff.js"></script>
 </body>
 </html>
